@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   percent_indicator:
   cupertino_icons: ^0.1.3
+  flutter_calendar_carousel: ^1.4.12
+
 
 dev_dependencies:
   flutter_test:

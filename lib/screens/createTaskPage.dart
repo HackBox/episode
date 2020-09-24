@@ -1,5 +1,7 @@
 import 'package:episode_testing/widgets/textfeild.dart';
 import 'package:flutter/material.dart';
+import 'package:episode_testing/themes/colors.dart';
+
 
 class CreateTask extends StatefulWidget {
   @override
@@ -15,6 +17,7 @@ class _CreateTaskState extends State<CreateTask> {
       color: Colors.black54,
     );
     return Scaffold(
+      backgroundColor:LightColors.kLightYellow,
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -24,7 +27,7 @@ class _CreateTaskState extends State<CreateTask> {
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -41,7 +44,7 @@ class _CreateTaskState extends State<CreateTask> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       MyTextField(label: 'Title'),
-                       SizedBox(height:10),
+                       SizedBox(height:15),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -78,7 +81,7 @@ class _CreateTaskState extends State<CreateTask> {
                         label: 'Start Time',
                         icon: downwardIcon,
                       )),
-                      SizedBox(width: 10),
+                      SizedBox(width: 20),
                       Expanded(
                         child: MyTextField(
                           label: 'End Time',
@@ -93,50 +96,7 @@ class _CreateTaskState extends State<CreateTask> {
                     minLines: 3,
                     maxLines: 3,
                   ),
-                  SizedBox(height: 5),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          'Category',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black54,
-                          ),
-                        ),
-                        Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.start,
-                          //direction: Axis.vertical,
-                          alignment: WrapAlignment.start,
-                          verticalDirection: VerticalDirection.down,
-                          runSpacing: 0,
-                          //textDirection: TextDirection.rtl,
-                          spacing: 10.0,
-                          children: <Widget>[
-                            Chip(
-                              label: Text("SPORT APP"),
-                              backgroundColor: Colors.red,
-                              labelStyle: TextStyle(color: Colors.white),
-                            ),
-                            Chip(
-                              label: Text("MEDICAL APP"),
-                            ),
-                            Chip(
-                              label: Text("RENT APP"),
-                            ),
-                            Chip(
-                              label: Text("NOTES"),
-                            ),
-                            Chip(
-                              label: Text("GAMING PLATFORM APP"),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  SizedBox(height: 20),
                     Container(
                       height: 50,
                       child: Text(
