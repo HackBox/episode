@@ -16,62 +16,73 @@ class TaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 1,
-      child: Container(
-        
-        margin: EdgeInsets.symmetric(vertical: 10.0),
-        padding: EdgeInsets.all(15.0),
-        height: 200,
-        decoration: BoxDecoration(
-          color: cardColor,
-          borderRadius: BorderRadius.circular(40.0),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: CircularPercentIndicator(
-                animation: true,
-                radius: 75.0,
-                percent: loadingPercent,
-                lineWidth: 5.0,
-                circularStrokeCap: CircularStrokeCap.round,
-                backgroundColor: Colors.white10,
-                progressColor: Colors.white,
-                center: Text(
-                  '${(loadingPercent*100).round()}%',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w700, color: Colors.white),
-                ),
-              ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
+    return Container(
+      
+      margin: EdgeInsets.symmetric(vertical: 10.0),
+      padding: EdgeInsets.all(20.0),
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(40.0),
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: CircularPercentIndicator(
+                      animation: true,
+                      radius: 55.0,
+                      percent: loadingPercent,
+                      lineWidth: 5.0,
+                      circularStrokeCap: CircularStrokeCap.round,
+                      backgroundColor: Colors.white10,
+                      progressColor: Colors.white,
+                      center: Text(
+                        '${(loadingPercent*100).round()}%',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, color: Colors.white),
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                child: Text(
                   title,
                   style: TextStyle(
-                    fontSize: 14.0,
+                    fontSize: 16.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Colors.white54,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ],
+              ),
+                ],
+              ),
+              
+              // here is the delete button
+
+            
+
+
+            ],
+          ),
+          Container(
+            // alignment: AlignmentGeometry(),
+            child: Text(
+            subtitle,
+            style: TextStyle(
+              fontSize: 13.0,
+              color: Colors.white54,
+              fontWeight: FontWeight.w400,
             ),
-          ],
-        ),
+              ),
+          ),
+        ],
       ),
     );
   }
 }
+

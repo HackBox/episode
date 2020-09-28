@@ -1,27 +1,15 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart'
     show CalendarCarousel;
 import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:flutter_calendar_carousel/classes/event_list.dart';
 import 'package:intl/intl.dart' show DateFormat;
-import './CreateTaskPage.dart';
-import 'package:episode_testing/themes/colors.dart';
-
+import 'package:episode/themes/colors.dart';
 
 class CalenderPage extends StatefulWidget {
   CalenderPage({
     Key key,
   }) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   @override
   _CalenderPageState createState() => new _CalenderPageState();
@@ -145,8 +133,8 @@ class _CalenderPageState extends State<CalenderPage> {
       markedDateIconBuilder: (event) {
         return event.icon;
       },
-      minSelectedDate: _currentDate.subtract(Duration(days: 360)),
-      maxSelectedDate: _currentDate.add(Duration(days: 360)),
+      minSelectedDate: _currentDate.subtract(Duration(days: 365)),
+      maxSelectedDate: _currentDate.add(Duration(days: 365)),
       todayButtonColor: Colors.transparent,
       todayBorderColor: Colors.green,
       markedDateMoreShowTotal:
@@ -218,8 +206,7 @@ class _CalenderPageState extends State<CalenderPage> {
     );
 
     return new Scaffold(
-            backgroundColor:LightColors.kLightYellow,
-
+        backgroundColor: LightColors.kLightYellow,
         appBar: new AppBar(
           title: new Text("Calender"),
         ),
@@ -233,9 +220,9 @@ class _CalenderPageState extends State<CalenderPage> {
               //   margin: EdgeInsets.symmetric(horizontal: 16.0),
               //   child: _calendarCarousel,
               // ),
-               // This trailing comma makes auto-formatting nicer for build methods.
+              // This trailing comma makes auto-formatting nicer for build methods.
               //custom icon without header
-             
+
               Container(
                 margin: EdgeInsets.only(
                   top: 16.0,
@@ -282,18 +269,18 @@ class _CalenderPageState extends State<CalenderPage> {
                 margin: EdgeInsets.symmetric(horizontal: 16.0),
                 child: _calendarCarouselNoHeader,
               ),
-               Align(
+              Align(
                 alignment: Alignment.center,
                 child: RaisedButton(
                     child: Text("Create Event"),
                     color: Colors.orangeAccent,
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => CreateTask()));
+                      // navigateToDetail(Todo('', '', ''), 'Add Todo');
                     }),
               ), //
             ],
           ),
         ));
   }
+
 }
