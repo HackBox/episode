@@ -272,10 +272,11 @@ class _CalenderPageState extends State<CalenderPage> {
               Align(
                 alignment: Alignment.center,
                 child: RaisedButton(
-                    child: Text("Create Event"),
+                    child: Text("Create Task"),
                     color: Colors.orangeAccent,
                     onPressed: () {
                       // navigateToDetail(Todo('', '', ''), 'Add Todo');
+                      Navigator.of(context).pop();
                     }),
               ), //
             ],
