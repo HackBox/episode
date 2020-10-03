@@ -17,7 +17,6 @@ class TaskCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       margin: EdgeInsets.symmetric(vertical: 10.0),
       padding: EdgeInsets.all(20.0),
       decoration: BoxDecoration(
@@ -42,47 +41,41 @@ class TaskCard extends StatelessWidget {
                       backgroundColor: Colors.white10,
                       progressColor: Colors.white,
                       center: Text(
-                        '${(loadingPercent*100).round()}%',
+                        '${(loadingPercent * 100).round()}%',
                         style: TextStyle(
                             fontWeight: FontWeight.w700, color: Colors.white),
                       ),
                     ),
                   ),
-
                   Expanded(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
-                ),
-              ),
                 ],
               ),
-              
+
               // here is the delete button
-
-            
-
-
             ],
           ),
           Container(
             // alignment: AlignmentGeometry(),
             child: Text(
-            subtitle,
-            style: TextStyle(
-              fontSize: 13.0,
-              color: Colors.white54,
-              fontWeight: FontWeight.w400,
-            ),
+              "subtitle",
+              style: TextStyle(
+                fontSize: 13.0,
+                color: Colors.white54,
+                fontWeight: FontWeight.w400,
               ),
+            ),
           ),
         ],
       ),
     );
   }
 }
-
