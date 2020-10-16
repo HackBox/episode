@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:episode/pages/Profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -6,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 
 import '../bloc/settings.dart';
 import '../style.dart';
@@ -59,6 +61,13 @@ class MainDrawer extends StatelessWidget {
                 }
               },
             ),
+          ),
+          ItemDrawer(
+            icon: FontAwesomeIcons.user,
+            text: 'profile',
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProfilePage()));
+            },
           ),
           const Spacer(),
           //wait version info
